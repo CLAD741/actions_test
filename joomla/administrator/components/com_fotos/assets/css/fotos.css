@@ -1,0 +1,12 @@
+.icon-perfils {
+	background-image: url(../images/view-16x16-perfils.png);
+}
+
+.icon-48-perfils {
+	background-image: url(../images/view-48x48-perfils.png);
+}
+
+.list-media {
+      max-width: 100px;
+      max-height: 100px;
+}

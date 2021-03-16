@@ -1,0 +1,9 @@
+sudo docker run -p 80:80 --name facultad \
+-e JOOMLA_DB_USER=admin \
+-e JOOMLA_DB_HOST=192.168.56.1 \
+-e JOOMLA_DB_PASSWORD=Admin123 \
+-e JOOMLA_DB_NAME=dbotro \
+-e JOOMLA_LIVE_SITE=http://localhost \
+-e SITENAME=yard \
+-e FROMNAME=yard \
+sitiosweb/sw-jl-plantilla-facultades-alpine:1.0.0

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset addfieldpath="/components/com_fotos/models/fields">
+
+       <field name="id" type="text" default="0" label="COM_FOTOS_FORM_LBL_PERFIL_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" />
+
+	   <field
+			name="nombre"
+			type="textfield"
+			label="COM_FOTOS_PERFIL_NOMBRE_LBL"
+			description="COM_FOTOS_PERFIL_NOMBRE_DESC"
+			default=""
+			/>
+
+		<field
+			name="correo"
+			type="email"
+			label="COM_FOTOS_PERFIL_CORREO_LBL"
+			description="COM_FOTOS_PERFIL_CORREO_DESC"
+			default=""
+			/>
+
+		<field
+			name="ext"
+			type="textfield"
+			label="COM_FOTOS_PERFIL_EXT_LBL"
+			description="COM_FOTOS_PERFIL_EXT_DESC"
+			default=""
+			/>
+
+		<field
+			name="imagen"
+			type="media"
+			label="COM_FOTOS_PERFIL_IMAGEN_LBL"
+			description="COM_FOTOS_PERFIL_IMAGEN_DESC"
+			default=""
+			/>
+
+			<field
+				name="cita"
+				type="textfield"
+				label="COM_FOTOS_PERFIL_CITA_LBL"
+				description="COM_FOTOS_PERFIL_CITA_DESC"
+				default=""
+				/>
+
+				<field
+					name="cargo"
+					type="textfield"
+					label="COM_FOTOS_PERFIL_CARGO_LBL"
+					description="COM_FOTOS_PERFIL_CARGO_DESC"
+					default=""
+					/>
+		<field
+			name="datos"
+			type="textfield"
+			label="COM_FOTOS_PERFIL_DATOS_LBL"
+			description="COM_FOTOS_PERFIL_DATOS_DESC"
+			default=""
+			/>
+
+		<field
+			name="created_by"
+			type="createdby"
+			label="COM_FOTOS_PERFIL_CREATED_BY_LBL"
+			description="COM_FOTOS_PERFIL_CREATED_BY_DESC"
+			default=""
+			/>
+
+		<field
+			class="inputbox"
+			size="1"
+			name="state"
+			type="list"
+			label="COM_FOTOS_PERFIL_STATE_LBL"
+			description="COM_FOTOS_PERFIL_STATE_DESC"
+			default="1"
+			>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+
+		<field
+			name="ordering"
+			type="hidden"
+			label="COM_FOTOS_PERFIL_ORDERING_LBL"
+			description="COM_FOTOS_PERFIL_ORDERING_DESC"
+			default=""
+			/>
+
+	</fieldset>
+</form>

@@ -1,0 +1,8 @@
+1- az login
+
+2- az acr login --name andescontainers
+
+3- docker tag sitiosweb/sw-jl-plantilla-facultades-alpine:1.0.0 andescontainers.azurecr.io/sitiosweb/sw-jl-plantilla-facultades-alpine:1.0.0
+
+
+  4- docker push andescontainers.azurecr.io/sitiosweb/sw-jl-plantilla-facultades-alpine:1.0.0
