@@ -25,7 +25,7 @@ jobs:
       - run: |
           sh create.sh
           docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
-          docker push ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
+          docker push ${{ env.REGISTRY_NAME }}.azurecr.io/sitiosweb/${{ env.APP_NAME }}:${{ github.sha }}
 
       - name: Conexión AKS
         uses: azure/aks-set-context@v1
