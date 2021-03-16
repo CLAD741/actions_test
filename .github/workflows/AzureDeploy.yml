@@ -1,11 +1,11 @@
 on: [push]
 env:
-  REGISTRY_NAME: { registry-name }
-  CLUSTER_NAME: { cluster-name }
-  CLUSTER_RESOURCE_GROUP: { resource-group-name }
-  NAMESPACE: { namespace-name }
-  SECRET: { secret-name }
-  APP_NAME: { app-name }
+  REGISTRY_NAME: andescontainers
+  CLUSTER_NAME: aks-cluster
+  CLUSTER_RESOURCE_GROUP: grp-sitios-web-pre
+  NAMESPACE: swpreprod
+  SECRET: bRkhTwkuTkJS.D_Pt6gSSj40ujD6jWd0wL
+  APP_NAME: SW_CICD_GitH
 
 name: AzureSWDeploy
 
