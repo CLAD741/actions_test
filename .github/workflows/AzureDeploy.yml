@@ -5,7 +5,7 @@ env:
   CLUSTER_RESOURCE_GROUP: grp-sitios-web-pre
   NAMESPACE: swpreprod
   SECRET: bRkhTwkuTkJS.D_Pt6gSSj40ujD6jWd0wL
-  APP_NAME: SW_CICD_GitH
+  APP_NAME: sitioactions
 
 name: AzureSWDeploy
 
