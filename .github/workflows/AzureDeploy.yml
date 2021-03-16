@@ -30,7 +30,7 @@ jobs:
       - name: Conexión AKS
         uses: azure/aks-set-context@v1
         with:
-          creds: "${secrets.AZURE_CREDENTIALS"
+          creds: "${secrets.AZURE_CREDENTIALS}"
           cluster-name: ${{env.CLUSTER_NAME}}
           resource-group: ${{env.CLUSTER_RESOURCE_GROUP}}
       - name: Creación imagen
