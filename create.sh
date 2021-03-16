@@ -1,8 +1,8 @@
 set -e
 
 echo "Creacion de la imagen Joomla plantilla yard con alpine"
-rm joomla.tar | true
-mv joomla/images joomla/_images | true
+#rm joomla.tar | true
+#mv joomla/images joomla/_images | true
 
 cd joomla/ && tar -cvf ../joomla.tar . && cd ..
 
