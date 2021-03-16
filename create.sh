@@ -10,4 +10,4 @@ chmod 777 -R joomla.tar
 
 ##Cambiar aqui la version de la imagen a compilar
 
-docker build . -t sitiosweb/sw-jl-plantilla-facultades-alpine:1.0.0
+#docker build . -t sitiosweb/sw-jl-plantilla-facultades-alpine:1.0.0
