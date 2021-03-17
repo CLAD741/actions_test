@@ -25,9 +25,8 @@ jobs:
           password: ${{secrets.REGISTRY_PASSWORD}}
 
       - run: |
-          cat ${{ env.DOCKER_CONFIG }}/config.json
+          sh create.sh
+          docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
+          docker push ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
 
-# docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
-#docker push ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
-#sh create.sh
 #extra
