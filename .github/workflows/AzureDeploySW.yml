@@ -1,4 +1,5 @@
 on: [push]
+
 env:
   REGISTRY_NAME: andescontainers
   CLUSTER_NAME: aks-cluster
@@ -22,6 +23,7 @@ jobs:
           login-server: ${{env.REGISTRY_NAME}}.azurecr.io
           username: ${{secrets.REGISTRY_USERNAME}}
           password: ${{secrets.REGISTRY_PASSWORD}}
+
       - run: |
           sh create.sh
           docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/sitiosweb/${{ env.APP_NAME }}:${{ github.sha }}
@@ -52,3 +54,4 @@ jobs:
           imagepullsecrets: |
             ${{ env.SECRET }}
           namespace: ${{ env.NAMESPACE }}
+#extratest
