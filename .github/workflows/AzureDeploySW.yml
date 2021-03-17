@@ -5,7 +5,7 @@ env:
   CLUSTER_NAME: aks-cluster
   CLUSTER_RESOURCE_GROUP: grp-sitios-web-pre
   NAMESPACE: swpreprod
-  SECRET: bRkhTwkuTkJS.D_Pt6gSSj40ujD6jWd0wL
+  SECRET: { secret-name }
   APP_NAME: sitioactions
 
 name: AzureSWDeploy
