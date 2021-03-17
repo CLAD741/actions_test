@@ -26,8 +26,6 @@ jobs:
 
       - run: |
           cat ${{ env.DOCKER_CONFIG }}/config.json
-          az login
-          az acr login --name ${{env.REGISTRY_NAME}}
 
 # docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
 #docker push ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
