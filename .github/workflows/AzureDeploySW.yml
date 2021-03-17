@@ -5,7 +5,6 @@ env:
   CLUSTER_NAME: aks-cluster
   CLUSTER_RESOURCE_GROUP: grp-sitios-web-pre
   NAMESPACE: swpreprod
-  SECRET: { secret-name }
   APP_NAME: sitioactions
 
 name: AzureSWDeploy
@@ -42,7 +41,6 @@ jobs:
           container-registry-url: ${{ env.REGISTRY_NAME }}.azurecr.io
           container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
           container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-          secret-name: ${{ env.SECRET }}
           namespace: ${{ env.NAMESPACE }}
       - uses: azure/k8s-deploy@v1
         with:
