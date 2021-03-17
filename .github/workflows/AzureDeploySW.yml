@@ -25,9 +25,9 @@ jobs:
           password: ${{secrets.REGISTRY_PASSWORD}}
 
       - run: |
-          az help
-          docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
-          docker push ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
+          az acr login --name ${{env.REGISTRY_NAME}}
 
+# docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
+#docker push ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
 #sh create.sh
 #extra
