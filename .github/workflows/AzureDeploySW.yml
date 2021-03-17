@@ -27,10 +27,12 @@ jobs:
       - run: |
           az login -u ${{secrets.REGISTRY_USERNAME}} -p ${{secrets.REGISTRY_PASSWORD}}
           az acr login -n andescontainers.azurecr.io
-          docker pull andescontainers.azurecr.io/sitiosweb/sw-jl-plantilla-facultades-alpine:1.0.0
+          sh create.sh
+          docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
+          docker push ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
 
 #sh create.sh
 #docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
 #          docker push ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
-
+#docker pull andescontainers.azurecr.io/sitiosweb/sw-jl-plantilla-facultades-alpine:1.0.0
 #extra
