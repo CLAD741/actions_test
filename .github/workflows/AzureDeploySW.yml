@@ -30,29 +30,4 @@ jobs:
           docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/sitiosweb/${{ env.APP_NAME }}:${{ github.sha }}
           docker push ${{ env.REGISTRY_NAME }}.azurecr.io/sitiosweb/${{ env.APP_NAME }}:${{ github.sha }}
 
-      - name: Conexión AKS
-        uses: azure/aks-set-context@v1
-        with:
-          creds: ${{secrets.AZURE_CREDENTIALS}}
-          cluster-name: ${{env.CLUSTER_NAME}}
-          resource-group: ${{env.CLUSTER_RESOURCE_GROUP}}
-      - name: Creación imagen
-        uses: azure/k8s-create-secret@v1
-        with:
-          container-registry-url: ${{ env.REGISTRY_NAME }}.azurecr.io
-          container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
-          container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-          secret-name: ${{ env.SECRET }}
-          namespace: ${{ env.NAMESPACE }}
-          force: true
-      - uses: azure/k8s-deploy@v1
-        with:
-          manifests: |
-            manifests/deployment.yml
-            manifests/service.yml
-          images: |
-            ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
-          imagepullsecrets: |
-            ${{ env.SECRET }}
-          namespace: ${{ env.NAMESPACE }}
 #extratest
