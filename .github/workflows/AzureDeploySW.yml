@@ -25,6 +25,7 @@ jobs:
           password: ${{secrets.REGISTRY_PASSWORD}}
 
       - run: |
+          docker login andescontainers.azurecr.io
           docker pull andescontainers.azurecr.io/sitiosweb/sw-jl-plantilla-facultades-alpine:1.0.0
 
 #sh create.sh
