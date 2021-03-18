@@ -1,10 +1,12 @@
+name: CargarContenedorRegistry
 on:
-  create: [tags]
+  push:
+    tags:
+      - "*"
 
 env:
   REGISTRY_NAME: andescontainers
-
-name: AzureSWDeploy
+  APP_NAME: sitiowebconactions
 
 jobs:
   job1:
@@ -35,5 +37,5 @@ jobs:
           az login -u ${{secrets.REGISTRY_USERNAME}} -p ${{secrets.REGISTRY_PASSWORD}}
           az acr login -n andescontainers.azurecr.io
           sh create.sh
-          docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
-          docker push ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
+          docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ env.RELEASE_VERSION }}
+          docker push ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ env.RELEASE_VERSION }}
