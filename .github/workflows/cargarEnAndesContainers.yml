@@ -20,9 +20,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch: "${{ env.RELEASE_VERSION }}"
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
+
       - name: Obtener Código
         uses: actions/checkout@main
 
